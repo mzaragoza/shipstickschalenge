@@ -1,0 +1,20 @@
+%h2 Products
+.table-responsive
+  %table.table.table-bordered.table-hover.table-striped
+    %thead
+      %tr
+        %th Name
+        %th Length
+        %th Width
+        %th Height
+        %th Weight
+        %th= link_to 'Add', new_product_path, class: 'btn btn-primary'
+    %tbody
+      - products.each do |p|
+        %tr
+          %td= link_to p.name, product_path(p), class: 'btn btn-link'
+          %td= p.length
+          %td= p.width
+          %td= p.height
+          %td= p.weight
+          %td= link_to 'Edit', edit_product_path(p), class: 'btn btn-info'

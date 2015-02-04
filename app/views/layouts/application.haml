@@ -1,0 +1,42 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+    %meta{:content => "", :name => "description"}
+    %meta{:content => "", :name => "author"}
+    %title 
+      - unless yield(:title).to_s.empty?
+        = yield (:title)
+        |
+      Ship Sticks 
+      |
+      Chalenge
+    /[if lt IE 9]
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    #wrapper
+      / Navigation
+      %nav.navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
+        / Brand and toggle get grouped for better mobile display
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to 'Ship Sticks Chalenge', root_path, class: 'navbar-brand'
+        .collapse.navbar-collapse.navbar-ex1-collapse
+          %ul.nav.navbar-nav.side-nav
+            %li{class: "#{'active' if params[:controller] == 'admins/dashboards'}"}
+              = link_to root_path do 
+                %i.fa.fa-fw.fa-dashboard
+                All Products
+      #page-wrapper
+        .container-fluid
+          = yield

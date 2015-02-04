@@ -1,0 +1,32 @@
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title
+      %i.fa.fa-clock-o.fa-fw
+      Product #{product.name}
+  .panel-body
+    .list-group
+      .list-group-item
+        %strong Name: 
+        = product.name
+      .list-group-item
+        %strong Type: 
+        = product.type
+      .list-group-item
+        %strong Length: 
+        = product.length
+      .list-group-item
+        %strong Width: 
+        = product.width
+      .list-group-item
+        %strong Height: 
+        = product.height
+      .list-group-item
+        %strong weight: 
+        = product.weight
+    .text-left
+      = link_to  edit_product_path(product), class: 'btn btn-info pull-right' do 
+        Edit #{product.name}
+        %i.fa.fa-arrow-circle-right
+      = link_to  root_path(), class: 'btn btn-info' do 
+        %i.fa.fa-arrow-circle-left
+        Back
