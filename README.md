@@ -1,18 +1,17 @@
-# Ship Sticks Chalenge
+Ship Sticks Chalenge
+--------------------
+[https://shipstickschalenge.herokuapp.com](https://shipstickschalenge.herokuapp.com)
 
-https://shipstickschalenge.herokuapp.com
-
-# List all Products (GET)
+**List all Products (GET)**
 https://shipstickschalenge.herokuapp.com/api/v1/products/
 
-# List One Products (GET)
+**List One Products (GET)**
 https://shipstickschalenge.herokuapp.com/api/v1/products/:id
 
-# List Best Products (GET)
+**List Best Products (GET)**
 https://shipstickschalenge.herokuapp.com/api/v1/products/?search=48x14x12
 
-
-# Add Product (POST)
+**Add Product (POST)**
 https://shipstickschalenge.herokuapp.com/api/v1/products/
 parameters: 
  - product[height] (int)
@@ -23,7 +22,7 @@ parameters:
  - product[width] (int)
 \* required
 
-# Update Product (PATCH)
+**Update Product (PATCH)**
 https://shipstickschalenge.herokuapp.com/api/v1/products/:id
 parameters: 
  - product[height] (int)
@@ -34,7 +33,6 @@ parameters:
  - product[width] (int)
 \* note only parameters that are pass are going to be updated 
 
-# Delete Product (DELETE)
+**Delete Product (DELETE)**
 https://shipstickschalenge.herokuapp.com/api/v1/products/:id
-
 
