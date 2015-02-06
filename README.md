@@ -13,6 +13,7 @@ https://shipstickschalenge.herokuapp.com/api/v1/products/?search=48x14x12
 
 **Add Product (POST)**
 https://shipstickschalenge.herokuapp.com/api/v1/products/
+```console
 parameters: 
  - product[height] (int)
  - product[length] (int)
@@ -21,9 +22,10 @@ parameters:
  - product[weight] (int)
  - product[width] (int)
 \* required
-
+```
 **Update Product (PATCH)**
 https://shipstickschalenge.herokuapp.com/api/v1/products/:id
+```console
 parameters: 
  - product[height] (int)
  - product[length] (int)
@@ -32,6 +34,7 @@ parameters:
  - product[weight] (int)
  - product[width] (int)
 \* note only parameters that are pass are going to be updated 
+```
 
 **Delete Product (DELETE)**
 https://shipstickschalenge.herokuapp.com/api/v1/products/:id
