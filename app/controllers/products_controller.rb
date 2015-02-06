@@ -1,7 +1,19 @@
 class ProductsController < ApplicationController
-   expose(:products){ Product.all }
+  expose(:products){
+    if params[:search]
+      products = Product.search(params[:search])
+    else
+      products = Product.all
+    end
+    products
+  }
    expose(:product, attributes: :product_params)
 
+   def index
+     if params[:search]
+       redirect_to product_path(products)
+     end
+   end
   def create
     if product.save
       flash[:notice] = t(:user_was_successfully_created)
