@@ -2314,6 +2314,7 @@ legend {
 label {
   display: inline-block;
   max-width: 100%;
+  min-width: 10%;
   margin-bottom: 5px;
   font-weight: bold;
 }

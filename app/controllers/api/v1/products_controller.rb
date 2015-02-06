@@ -1,7 +1,14 @@
 class Api::V1::ProductsController < ApiController
   protect_from_forgery except: :all
-   expose(:products){ Product.all }
-   expose(:product, attributes: :product_params)
+  expose(:products){
+    if params[:search]
+      products = Product.search(params[:search])
+    else
+      products = Product.all
+    end
+    products
+  }
+  expose(:product, attributes: :product_params)
 
   def index
     render json: products

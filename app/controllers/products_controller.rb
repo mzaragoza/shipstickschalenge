@@ -20,6 +20,15 @@ class ProductsController < ApplicationController
     end
   end
 
+   def destroy
+    if product.destroy
+      flash[:notice] = t(:user_was_successfully_deleted)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
    private
    def product_params
      params.require(:product).permit(
