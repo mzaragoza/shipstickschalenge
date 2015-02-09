@@ -15,9 +15,9 @@ class Product
 
   def self.search(search ={})
     search = search.split('x')
-    length = search[0].to_i
-    width  = search[1].to_i
-    height = search[2].to_i
+    length = search[0].to_i || 0
+    width  = search[1].to_i || 0
+    height = search[2].to_i || 0
     self.gt(length: length).gt(width: width).gt(height: height).order_by(:width.asc, :height.asc, :length.asc).to_a.first
   end
 end
